@@ -5,8 +5,11 @@ import net.fabricmc.fabric.api.client.networking.v1.ClientPlayConnectionEvents
 import net.minecraft.client.MinecraftClient
 import net.minecraft.client.sound.PositionedSoundInstance
 import net.minecraft.client.sound.SoundInstance
+import net.minecraft.sound.SoundCategory
 import net.minecraft.sound.SoundEvent
 import net.minecraft.util.Identifier
+import net.minecraft.util.math.random.Random
+import java.io.File
 
 object MenuMusicPlayer {
 	private val MENU_MUSIC = Identifier("votivebackgroundmusic", "menu_music")
@@ -14,6 +17,9 @@ object MenuMusicPlayer {
 	private var isWorld = false
 	private var currentMusic: SoundInstance? = null
 	var isInitSoundEngine = false
+
+//	private val soundsFolderUrl = javaClass.classLoader.getResource("assets/votivebackgroundmusic/sounds")
+
 
 	private var client: MinecraftClient? = null
 
@@ -44,7 +50,21 @@ object MenuMusicPlayer {
 	fun playMenuMusic(client: MinecraftClient) {
 		isPlaying = true
 		val soundEvent = SoundEvent.of(MENU_MUSIC)
-		currentMusic = PositionedSoundInstance.master(soundEvent, 1F)
+
+		currentMusic = PositionedSoundInstance(
+			soundEvent.id,
+			SoundCategory.MASTER,
+			0.7f,
+			1.0f,
+			Random.create(),
+			true,
+			0,
+			SoundInstance.AttenuationType.NONE,
+			0.0, 0.0, 0.0,
+			true
+		)
+
+	//	currentMusic = PositionedSoundInstance.master(soundEvent, 1F)
 		client.soundManager.play(currentMusic!!)
 		println("МУЗЫКА ВКЛЮЧЕНА")
 	}
