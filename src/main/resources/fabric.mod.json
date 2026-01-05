@@ -3,8 +3,10 @@
   "id": "votivebackgroundmusic",
   "version": "${version}",
   "name": "VotiveBackgroundMusic",
-  "description": "",
-  "authors": [],
+  "description": "Мод, добавляющий кастомную музыку в меню",
+  "authors": [
+    "maxos"
+  ],
   "contact": {},
   "license": "All-Rights-Reserved",
   "icon": "assets/votivebackgroundmusic/icon.png",
@@ -14,10 +16,16 @@
       "me.maxos.votive.votivebackgroundmusic.client.VotivebackgroundmusicDataGenerator"
     ],
     "client": [
-      "me.maxos.votive.votivebackgroundmusic.client.VotivebackgroundmusicClient"
+      {
+        "adapter": "kotlin",
+        "value": "me.maxos.votive.votivebackgroundmusic.client.VotivebackgroundmusicClient"
+      }
     ],
     "main": [
-      "me.maxos.votive.votivebackgroundmusic.Votivebackgroundmusic"
+      {
+        "adapter": "kotlin",
+        "value": "me.maxos.votive.votivebackgroundmusic.Votivebackgroundmusic"
+      }
     ]
   },
   "mixins": [

@@ -14,7 +14,7 @@ base {
 	archivesName.set(project.property("archives_base_name") as String)
 }
 
-val targetJavaVersion = 21
+val targetJavaVersion = 17
 java {
 	toolchain.languageVersion = JavaLanguageVersion.of(targetJavaVersion)
 	// Loom will automatically attach sourcesJar to a RemapSourcesJar task and to the "build" task
@@ -53,7 +53,11 @@ dependencies {
 	minecraft("com.mojang:minecraft:${project.property("minecraft_version")}")
 	mappings("net.fabricmc:yarn:${project.property("yarn_mappings")}:v2")
 	modImplementation("net.fabricmc:fabric-loader:${project.property("loader_version")}")
+
 	modImplementation("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
+	include("net.fabricmc:fabric-language-kotlin:${project.property("kotlin_loader_version")}")
+	implementation("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.3.0")
+	include("org.jetbrains.kotlin:kotlin-stdlib-jdk8:2.3.0")
 
 	modImplementation("net.fabricmc.fabric-api:fabric-api:${project.property("fabric_version")}")
 }
