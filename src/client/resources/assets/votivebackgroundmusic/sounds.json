@@ -1,0 +1,11 @@
+{
+  "menu_music": {
+    "sounds": [
+      {
+        "name": "votivebackgroundmusic:menu_music",
+        "stream": true,
+        "preload": false
+      }
+    ]
+  }
+}
