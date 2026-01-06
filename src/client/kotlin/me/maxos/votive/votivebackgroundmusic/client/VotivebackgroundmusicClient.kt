@@ -6,5 +6,6 @@ class VotivebackgroundmusicClient : ClientModInitializer {
 
 	override fun onInitializeClient() {
 		MenuMusicPlayer.init()
+		MenuBlocker.onConnectServer()
 	}
 }
