@@ -1,6 +1,5 @@
 Чтобы изменить музыку, нужно сделать:
 1) Открыть .jar файл мода через WinRar (или любую другую подходящую программу)
-![Uploading image.png…]()
 2) Далее переходим по пути 'assets/votivebackgroundmusic/sounds/'
 3) Перед нами файл: menu_music.ogg
 4) Переименуйте свой .ogg файл в menu_music.ogg
